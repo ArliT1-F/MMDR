@@ -158,11 +158,55 @@ See API Reference for all options
 
 ## Keybindings
 | ***Key***           | ***Action***                |
-|:--------------------|----------------------------:|
-| ``` ` ``` (Backtick) | Toggle debug console        |
+|:-------------------:|:---------------------------:|
+| ``` ` ```(Backtick) | Toggle debug console        |
 | `F3`                | Cycle inspector mode        |
 | `F4`                | Toggle NBT display          |
 | `F5`                | Toggle packet monitor       |
 | `F6`                | Toggle event listeners      |
 | `F7`                | Toggle performance metrics  |
 | `F9`                | Start/stop action recording |
+
+
+## Inspector Modes
+### BASIC Mode:
+- Block/entity type
+- Position
+- Basic properties
+
+### DETAILED Mode:
+- All basic info
+- NBT data
+- Block state properties
+- Entity health/veloxity
+
+### ADVANCED Mode:
+- Everything from **DETAILED**
+- Network packets
+- Event listeners
+- Performance metrics
+
+## Reading NBT data
+When NBT display is enabled `F4`, you'll see:
+```text
+§6§lNBT Data:
+§e{
+  §eid§7: §b"minecraft:chest"
+  §eitems§7: [
+    §e{
+      §eSlot§7: §b0
+      §eid§7: §a"minecraft:diamond"
+      §eCount§7: §b64
+    §e}
+  §e]
+§e}
+```
+**Color codes:**
+- 🟡Yellow: Keys
+- 🔵Blue: Numbers
+- 🟢Green: Strings
+- 🟣Purple: Booleans
+
+---
+## Recording Your First Test
+The test harness can automatically generate unit tests from your gameplay.
