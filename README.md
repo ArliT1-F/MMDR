@@ -178,7 +178,7 @@ See API Reference for all options
 - All basic info
 - NBT data
 - Block state properties
-- Entity health/veloxity
+- Entity health/velocity
 
 ### ADVANCED Mode:
 - Everything from **DETAILED**
