@@ -1,0 +1,192 @@
+# ================================
+# Gradle
+# ================================
+.gradle/
+build/
+out/
+bin/
+.gradletasknamecache
+
+# ================================
+# IDE - IntelliJ IDEA
+# ================================
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+
+# ================================
+# IDE - Eclipse
+# ================================
+.classpath
+.project
+.settings/
+*.launch
+.metadata/
+.recommenders/
+
+# ================================
+# IDE - VS Code
+# ================================
+.vscode/
+*.code-workspace
+
+# ================================
+# IDE - NetBeans
+# ================================
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# ================================
+# Fabric/Minecraft Development
+# ================================
+run/
+logs/
+crash-reports/
+.fabric/
+remappedSrc/
+minecraft/
+saves/
+screenshots/
+resourcepacks/
+shaderpacks/
+config/
+mods/
+options.txt
+usercache.json
+usernamecache.json
+servers.dat
+realms_persistence.json
+
+# Fabric specific
+fabric-server-launcher.properties
+fabric-server-launch.jar
+
+# ================================
+# MMDR Specific
+# ================================
+# MMDR recordings and generated tests
+mmdr_recordings/
+mmdr_tests/
+
+# MMDR runtime config (user-specific)
+mmdr-config.json
+
+# Keep example config
+!mmdr-config.example.json
+
+# ================================
+# Java/Compiled
+# ================================
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# ================================
+# Logs
+# ================================
+*.log
+logs/
+*.log.*
+
+# ================================
+# OS Specific
+# ================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ================================
+# Temporary Files
+# ================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+*~
+
+# ================================
+# Archives
+# ================================
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# But keep distribution archives in releases
+!releases/*.zip
+!releases/*.jar
+
+# ================================
+# Security
+# ================================
+# Don't commit sensitive data
+secrets/
+*.pem
+*.key
+*.cert
+credentials.json
+
+# ================================
+# Documentation Build
+# ================================
+docs/_build/
+docs/.doctrees/
+site/
+
+# ================================
+# Test Coverage
+# ================================
+coverage/
+*.coverage
+.nyc_output/
+htmlcov/
+
+# ================================
+# Package Managers
+# ================================
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ================================
+# Misc
+# ================================
+.cache/
+*.pid
+*.seed
+*.pid.lock
+.env
+.env.local

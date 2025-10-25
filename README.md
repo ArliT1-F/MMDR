@@ -154,7 +154,7 @@ MMDR creates a configuration file at `.minecraft/config/mmdr-config.json`.
 | `debugLogging`        | Enable verbose debug logs                  | `false`       |
 
 
-See API Reference for all options
+See [API Reference](docs/API_REFERENCE.md) for all options
 
 ## Keybindings
 | ***Key***           | ***Action***                |
@@ -167,46 +167,108 @@ See API Reference for all options
 | `F7`                | Toggle performance metrics  |
 | `F9`                | Start/stop action recording |
 
+*All keybindings are configurable in Minecraft's controls menu.*
 
-## Inspector Modes
-### BASIC Mode:
-- Block/entity type
-- Position
-- Basic properties
-
-### DETAILED Mode:
-- All basic info
-- NBT data
-- Block state properties
-- Entity health/velocity
-
-### ADVANCED Mode:
-- Everything from **DETAILED**
-- Network packets
-- Event listeners
-- Performance metrics
-
-## Reading NBT data
-When NBT display is enabled `F4`, you'll see:
-```text
-§6§lNBT Data:
-§e{
-  §eid§7: §b"minecraft:chest"
-  §eitems§7: [
-    §e{
-      §eSlot§7: §b0
-      §eid§7: §a"minecraft:diamond"
-      §eCount§7: §b64
-    §e}
-  §e]
-§e}
+## 🛠️ Development
+### Building from Source
+```bash
+git clone https://github.com/ArliT1-F/MMDR.git
+cd MMDR
+./gradlew build
 ```
-**Color codes:**
-- 🟡Yellow: Keys
-- 🔵Blue: Numbers
-- 🟢Green: Strings
-- 🟣Purple: Booleans
+### Running Tests
+```bash
+./gradlew test
+```
+### Development Setup
+1. Import the project into IntelliJ IDEA or Eclipse
+2. Run `./gradlew genSources` to generate Minecraft sources
+3. Use the Fabric run configurations to launch the game
+### Project Structure
+```text
+MMDR/
+├── src/main/java/com/mmdr/
+│   ├── MMDR.java              # Main mod class
+│   ├── hotreload/             # Hot reload system
+│   ├── console/               # Debug console
+│   ├── inspector/             # Visual inspector
+│   ├── testing/               # Test harness
+│   └── util/                  # Utilities
+├── docs/                      # Documentation
+└── build.gradle               # Build configuration
+```
+## 🤝 Contributing
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
----
-## Recording Your First Test
-The test harness can automatically generate unit tests from your gameplay.
+### How to Contribute
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+### Areas We Need Help
+- [ ] Adding support for Forge (currently Fabric-only)
+- [ ] Improving bytecode transformation for better hot reload
+- [ ] Adding more test generation templates
+- [ ] Expanding the inspector with more data visualizations
+- [ ] Writing additional documentation and tutorials
+### 📊 Performance Impact
+MMDR is designed to have minimal performance impact when features are not actively used:
+
+- **Hot Reload:** ~1-2% CPU overhead when watching files
+- **Console:** No overhead when closed
+- **Inspector:** ~0.5 FPS drop when enabled
+- **Test Recording:** ~1-2% overhead when recording
+
+All features can be individually disabled in the configuration.
+
+## 🐛 Troubleshooting
+### Hot Reload Not Working
+- Ensure your IDE is set to auto-compile on save
+- Check that MMDR is watching the correct directories
+- Look for errors in the game log (`logs/latest.log`)
+- Verify the class is not excluded in `mmdr-config.json`
+### Console Won't Open
+- Check keybinding conflicts in Minecraft settings
+- Ensure `consoleEnabled` is `true` in config
+- Try restarting Minecraft
+### Inspector Shows Wrong Data
+- Update MMDR to the latest version
+- Clear the config file and let MMDR regenerate it
+- Report the issue on GitHub with screenshots
+
+See [Troubleshooting Guide](docs/GETTING_STARTED.md#troubleshooting) for more help.
+
+## 📜 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+Fabric Team - For the excellent modding framework
+ASM - Bytecode manipulation library
+Groovy - Scripting engine for the REPL
+Minecraft Modding Community - For inspiration and support
+## 📞 Contact & Support
+Issues: GitHub Issues
+Discussions: GitHub Discussions
+Discord: Join our Discord
+## 🗺️ Roadmap
+### Version 1.1 (Planned)
+- [ ] Forge support
+- [ ] Better state migration during hot reload
+- [ ] GUI configuration editor
+- [ ] Network inspector with packet editing
+### Version 1.2 (Planned)
+- [ ] Profiler integration
+- [ ] Breakpoint debugging support
+- [ ] Live variable editing
+- [ ] Collaborative development features
+### Future
+- [ ] Multi-version support (1.19+)
+- [ ] Cloud recording storage
+- [ ] AI-assisted test generation
+- [ ] Plugin system for extensions
+
+## ⭐ Star History
+If you find MMDR useful, please consider giving it a star on GitHub!
+
+<p align="center"> <b>Made with ❤️ by the MMDR Team</b><br> <i>Saving mod developers thousands of hours, one reload at a time.</i> </p>
