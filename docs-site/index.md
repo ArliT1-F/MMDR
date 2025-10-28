@@ -68,6 +68,7 @@ MMDR is designed to be **lightweight and efficient**:
 ## 🚀 Quick Example
 
 ```java
+
 // 1. Make a change to your mod
 public String getMessage() {
     return "Hello from hot reload!"; // ✨ Change this
@@ -77,7 +78,8 @@ public String getMessage() {
 // 3. See changes instantly in-game!
 ```
 Press ``` ` ``` in-game to open the debug console:
-```groovy
+```java
+
 // Teleport instantly
 mc.player.setPosition(0, 100, 0)
 

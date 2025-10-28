@@ -103,12 +103,22 @@ body {
     width: 100%;
 }
 
-/* Hero Section */
+/* Hero Section - Only the top part */
+.home .main-content > h1:first-child,
+.home .main-content > p:first-of-type {
+    color: white;
+}
+
+/* Main Content */
+.main-content {
+    min-height: calc(100vh - 200px);
+    padding: 3rem 0;
+}
+
+/* Home page hero background */
 .home .main-content {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 6rem 2rem;
-    text-align: center;
+    padding: 6rem 2rem 4rem;
     position: relative;
     overflow: hidden;
 }
@@ -132,21 +142,22 @@ body {
 }
 
 .home h1 {
-    color: white;
     font-size: 3.5rem;
     margin-bottom: 1rem;
     position: relative;
     z-index: 1;
     animation: fadeInUp 0.8s ease-out;
+    color: white !important;
 }
 
-.home p {
+.home > .main-content > p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     position: relative;
     z-index: 1;
     opacity: 0.95;
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    color: white !important;
 }
 
 @keyframes fadeInUp {
@@ -160,12 +171,7 @@ body {
     }
 }
 
-/* Main Content */
-.main-content {
-    min-height: calc(100vh - 200px);
-    padding: 3rem 0;
-}
-
+/* Regular headings and text */
 h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -183,6 +189,13 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
+/* Override h2 color for home page */
+.home h2 {
+    color: white !important;
+    background: none !important;
+    -webkit-text-fill-color: white !important;
+}
+
 h2::after {
     content: '';
     position: absolute;
@@ -192,6 +205,10 @@ h2::after {
     height: 3px;
     background: var(--primary-color);
     border-radius: 2px;
+}
+
+.home h2::after {
+    background: white;
 }
 
 h3 {
@@ -216,12 +233,14 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Feature Cards */
+/* Feature Cards - FIXED TEXT COLOR */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin: 3rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 .feature {
@@ -233,6 +252,14 @@ a:hover {
     border: 1px solid var(--border-color);
 }
 
+/* Force dark text in feature cards */
+.feature,
+.feature p,
+.feature li,
+.feature strong {
+    color: var(--text-color) !important;
+}
+
 .feature:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
@@ -241,12 +268,17 @@ a:hover {
 
 .feature h3 {
     margin-top: 1rem;
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     font-size: 1.3rem;
 }
 
-.feature p {
-    color: var(--text-light);
+.feature ul {
+    margin-left: 1.5rem;
+}
+
+.feature li {
+    margin: 0.5rem 0;
+    color: var(--text-color) !important;
 }
 
 /* Code blocks */
@@ -259,6 +291,7 @@ pre {
     margin: 1.5rem 0;
     box-shadow: var(--shadow);
     position: relative;
+    z-index: 1;
 }
 
 pre::before {
@@ -294,11 +327,14 @@ table {
     box-shadow: var(--shadow);
     border-radius: 8px;
     overflow: hidden;
+    background: white;
+    position: relative;
+    z-index: 1;
 }
 
 th {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    color: white !important;
     padding: 1rem;
     text-align: left;
     font-weight: 600;
@@ -307,6 +343,7 @@ th {
 td {
     padding: 1rem;
     border-bottom: 1px solid var(--border-color);
+    color: var(--text-color) !important;
 }
 
 tr:hover {
@@ -345,7 +382,7 @@ tr:hover {
 
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: white;
+    color: white !important;
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
 }
 
@@ -357,13 +394,13 @@ tr:hover {
 
 .btn-secondary {
     background: white;
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     border: 2px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
     background: var(--primary-color);
-    color: white;
+    color: white !important;
     text-decoration: none;
 }
 
@@ -400,22 +437,25 @@ blockquote {
 
 .site-footer p {
     text-align: center;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    border-top: 2px solid var(--border-color);
+    margin: 3rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.home hr {
+    border-top-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Scroll to top indicator */
 html {
     scroll-padding-top: 80px;
-}
-
-/* Animations */
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-.btn:hover {
-    animation: pulse 1s ease-in-out infinite;
 }
 
 /* Responsive */
@@ -428,7 +468,7 @@ html {
         font-size: 2rem;
     }
     
-    .home p {
+    .home > .main-content > p {
         font-size: 1.1rem;
     }
     
