@@ -7,80 +7,119 @@ title: Home
 
 **Stop wasting time waiting for restarts. Start coding at the speed of thought.**
 
-MMDR is a revolutionary development environment that brings hot reload, interactive debugging, and automatic test generation to Minecraft mod development.
+MMDR eliminates the painful edit-compile-restart cycle by providing hot reload capabilities, an interactive debug console, visual inspection tools, and automatic test generation.
 
-## ✨ Key Features
+[Get Started →](/MMDR/guides/getting-started){: .btn .btn-primary}
+[View on GitHub →](https://github.com/ArliT1-F/MMDR){: .btn .btn-secondary}
 
-<div class="features">
-  <div class="feature">
-    <h3>🔥 Hot Reload</h3>
-    <p>Modify your code and see changes instantly without restarting Minecraft. Save hours every day.</p>
-  </div>
-  
-  <div class="feature">
-    <h3>💻 Debug Console</h3>
-    <p>Execute Java/Groovy code directly in-game with full access to Minecraft internals.</p>
-  </div>
-  
-  <div class="feature">
-    <h3>🔍 Visual Inspector</h3>
-    <p>Inspect blocks, entities, NBT data, and network packets in real-time with a beautiful overlay.</p>
-  </div>
-  
-  <div class="feature">
-    <h3>🧪 Test Generator</h3>
-    <p>Record your gameplay and automatically generate JUnit tests. Testing has never been easier.</p>
-  </div>
+---
+
+<div class="features" markdown="1">
+
+<div class="feature" markdown="1">
+
+### 🔥 Hot Reload System
+
+Modify Java code and see changes **instantly** without restarting Minecraft. Save hours every day with intelligent class reloading and state preservation.
+
 </div>
 
-## 🚀 Quick Start
+<div class="feature" markdown="1">
 
-```bash
-# 1. Download MMDR
-git clone https://github.com/yourusername/MMDR.git
-cd MMDR
+### 💻 Interactive Debug Console
 
+Execute Java/Groovy code directly in-game with full access to Minecraft internals. REPL environment with command history and auto-completion.
 
-# 2. Build the mod
-./gradlew build
+</div>
 
-# 3. Install to Minecraft
-cp build/libs/mmdr-1.0.0.jar ~/.minecraft/mods/
+<div class="feature" markdown="1">
 
-# 4. Launch and press ` (backtick) to open console
-```
-[Get Started](/guides/getting-started) → {: .btn .btn-primary}
+### 🔍 Visual Inspector
 
-[View on GitHub](https://github.com/ArliT1-F/MMDR) → {: .btn .btn-secondary}
+Inspect blocks, entities, NBT data, and network packets in real-time with a beautiful overlay. Three modes: Basic, Detailed, and Advanced.
+
+</div>
+
+<div class="feature" markdown="1">
+
+### 🧪 Automatic Test Generator
+
+Record your gameplay and automatically generate JUnit tests. Export as JUnit, TestNG, or Cucumber features. Testing has never been easier.
+
+</div>
+
+</div>
+
+---
 
 ## 📊 Performance Impact
-MMDR is designed to be lightweight and efficient:
 
-| Feature	     | Performance Impact |
-|:---------------|:-------------------|
-|Hot Reload	     | ~1-2% CPU overhead |
-|Console	     | 0% when closed     |
-|Inspector	     | ~0.5 FPS drop when enabled |
-|Test Recording	 | ~1-2% overhead |
+MMDR is designed to be **lightweight and efficient**:
 
-## 💡 Use Cases
-### During Development
-- Test code changes instantly without restarting
-- Debug issues with the interactive console
+| Feature | Performance Impact |
+|---------|-------------------|
+| Hot Reload | ~1-2% CPU overhead |
+| Console | 0% when closed |
+| Inspector | ~0.5 FPS drop |
+| Test Recording | ~1-2% overhead |
+
+---
+
+## 🚀 Quick Example
+
+```java
+// 1. Make a change to your mod
+public String getMessage() {
+    return "Hello from hot reload!"; // ✨ Change this
+}
+
+// 2. Save the file (Ctrl+S)
+// 3. See changes instantly in-game!
+```
+Press ``` ` ``` in-game to open the debug console:
+```groovy
+// Teleport instantly
+mc.player.setPosition(0, 100, 0)
+
+// Give yourself items
+mc.player.giveItemStack(new ItemStack(Items.DIAMOND, 64))
+
+// Change time of day
+mc.world.setTimeOfDay(6000)
+```
+
+## Why MMDR?
+<div class="features" markdown="1"><div class="feature" markdown="1">
+
+**During Develpment**
+- Test code changes instantly
+- Debug issues with interactivee console
 - Inspect game state in real-time
-### For Testing
+</div><div class="feature" markdown="1">
+
+**For Testing**
 - Record gameplay sessions as tests
 - Generate test code automatically
 - Run tests in mock environments
-### For Learning
+</div><div class="feature" markdown="1">
+
+**For Learning**
 - Experiment with Minecraft internals
 - Learn by inspecting how things work
-- Try code snippets without consequences
-## 📖 Documentation
-<div class="doc-links"> <a href="/guides/getting-started" class="doc-link"> <h4>Getting Started</h4> <p>Install MMDR and run your first hot reload</p> </a> <a href="/guides/hot-reload" class="doc-link"> <h4>Hot Reload Guide</h4> <p>Master instant code reloading</p> </a> <a href="/guides/console" class="doc-link"> <h4>Console Guide</h4> <p>Learn the interactive debug console</p> </a> <a href="/guides/inspector" class="doc-link"> <h4>Inspector Guide</h4> <p>Use the visual inspector overlay</p> </a> <a href="/guides/api-reference" class="doc-link"> <h4>API Reference</h4> <p>Complete API documentation</p> </a> </div>
+- Try code snippets safely
+</div></div>
 
-## 🤝 Contributing
-We welcome contributions! Whether it's bug reports, feature requests, or code contributions, we'd love your help.
+
+## Documentation
+Comprehensive guides to help you master MMDR:
+- [Getting Started](/MMDR/guides/getting-started) - Install and run your first hot reload
+- [Hot Reload Guide](/MMDR/guides/hot-reload) - Master instant code reloading
+- [Console Guide](/MMDR/guides/console-guide) - Learn the interactive debug console
+- [Inspector Guide](/MMDR/guides/inspector-guide) - Use the visual inspector overlay
+- [API Reference](/MMDR/guides/api-reference) - Complete API documentation
+
+
+## Contact Us
 
 [**Report a Bug**](https://github.com/ArliT1-F/MMDR/issues/new?template=bug_report.md)
 
