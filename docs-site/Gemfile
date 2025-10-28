@@ -17,5 +17,3 @@ end
 
 # Performance-booster for watching directories
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
-
-echo "✅ All GitHub Pages files created successfully!"
