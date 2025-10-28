@@ -1,7 +1,7 @@
 title: MMDR Documentation
 description: Minecraft Mod Development Runtime - Revolutionary development tools for mod developers
-baseurl:"/MMDR"
-url: https://arlit1-f.github.io
+baseurl:" /MMDR"
+url: "https://arlit1-f.github.io"
 repository: arlit1-f/MMDR
 
 # Build settings
