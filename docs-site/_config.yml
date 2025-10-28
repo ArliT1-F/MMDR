@@ -1,0 +1,54 @@
+title: MMDR Documentation
+description: Minecraft Mod Development Runtime - Revolutionary development tools for mod developers
+baseurl:"/MMDR"
+url: https://arlit1-f.github.io
+repository: arlit1-f/MMDR
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Navigation
+nav:
+  - title: Home
+    url: /
+  - title: Getting Started
+    url: /guides/getting-started
+    subnav:
+      - title: Hot Reload
+        url: /guides/hot-reload
+      - title: Console
+        url: /guides/console
+      - title:: Inspector
+        url: /guides/inspector
+  - title: API Reference
+    url: /guides/api-reference
+  - title: GitHub
+    url: https://github.com/ArliT1-F/MMDR
+    external: true
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+
+# Syntax highlighting
+highlighter: rouge
+
+# Permalink structure
+permalink: pretty

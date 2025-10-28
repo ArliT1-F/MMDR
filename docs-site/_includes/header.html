@@ -1,0 +1,42 @@
+<header class="site-header">
+     <div class="container">
+         <nav class="navbar">
+             <div class="navbar-brand"> 
+                <a href="{{ '/' | relative_url }}"> 
+                    <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="MMDR" class="logo" onerror="this.style.display='none'"> 
+                    <span class="brand-name">{{ site.title }}</span> 
+                </a> 
+                </div>
+                <button class="navbar-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        
+            <div class="navbar-menu">
+                {% for item in site.nav %}
+                    {% if item.subnav %}
+                        <div class="navbar-dropdown">
+                            <a href="{{ item.url | relative_url }}" class="navbar-item">
+                                {{ item.title }}
+                            </a>
+                            <div class="dropdown-menu">
+                                {% for subitem in item.subnav %}
+                                    <a href="{{ subitem.url | relative_url }}" class="dropdown-item">
+                                        {{ subitem.title }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}" 
+                        class="navbar-item"
+                        {% if item.external %}target="_blank" rel="noopener"{% endif %}>
+                            {{ item.title }}
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </nav>
+    </div>
+</header>
