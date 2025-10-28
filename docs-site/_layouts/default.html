@@ -1,60 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
-        </title>
-        <meta name="description" content="{{page.description | default: sete.description}}">
-        
-        <!-- CSS -->
-        <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url}}">
-
-        <!-- SEO -->
-        {% seo %}
-    </head>
-    <body>
-        {% include header.html %}
-        <main class="main-content">
-            {% if page.layout == 'home' %}
-                {{ content }}
-            {% else %}
-                <div class="container">
-                    <div class="content-wrapper">
-                        {% if page.sidebar != false %}
-                            {% include sidebar.html %}
-                        {% endif %}
-                
-                        <article class="content">
-                            {% if page.title %}
-                                <h1>{{ page.title }}</h1>
-                            {% endif %}
-                    
-                            {{ content }}
-                    
-                            {% if page.edit_url != false %}
-                                <div class="edit-page">
-                                    <a href="https://github.com/{{ site.repository }}/edit/main/docs-site/{{ page.path }}">
-                                    Edit this page on GitHub
-                                    </a>
-                                </div>
-                            {% endif %}
-                        </article>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
                 </div>
-            {% endif %}
-        </main>
-
-        {% include footer.html %}
-
-        <!-- JavaScript -->
-        <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    </body>
+                <div class="navbar-menu">
+                    <a href="{{ '/' | relative_url }}" class="navbar-item">Home</a>
+                    <a href="{{ '/guides/getting-started' | relative_url }}" class="navbar-item">Getting Started</a>
+                    <a href="{{ '/guides/hot-reload' | relative_url }}" class="navbar-item">Hot Reload</a>
+                    <a href="{{ '/guides/console' | relative_url }}" class="navbar-item">Console</a>
+                    <a href="{{ '/guides/inspector' | relative_url }}" class="navbar-item">Inspector</a>
+                    <a href="{{ '/guides/api-reference' | relative_url }}" class="navbar-item">API</a>
+                    <a href="https://github.com/ArliT1-F/MMDR" class="navbar-item" target="_blank">GitHub</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="container">
+            {{ content }}
+        </div>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 MMDR Team. Licensed under MIT.</p>
+        </div>
+    </footer>
+</body>
 </html>
