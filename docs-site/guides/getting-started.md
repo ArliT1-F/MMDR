@@ -69,7 +69,7 @@ cd MMDR
 1. **Launch Minecraft** with the Fabric profile
 2. Wait for the main menu to load
 3. Press ``` ` ``` (backtick key, usually above Tab)
-4. You should see the **MMDR Debug Console**:
+4. **MMDR Debug Console** will show up:
 ```text
 ╔════════════════════════════════════════════════════════╗
 ║        MMDR Debug Console v1.0.0                       ║
