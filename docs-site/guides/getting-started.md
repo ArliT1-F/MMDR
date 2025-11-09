@@ -75,8 +75,8 @@ cd MMDR
 ║        MMDR Debug Console v1.0.0                       ║
 ║  Type Java/Groovy code to execute. Press ESC to close. ║
 ╚════════════════════════════════════════════════════════╝
->
 ```
+>
 5. Type `println("Hello MMDR!")` and press Enter
 6. You should see the output: `Hello MMDR!`
 
