@@ -116,7 +116,7 @@ mc.world.setTimeOfDay(6000)
 Comprehensive guides to help you master MMDR:
 - [Getting Started](/MMDR/guides/getting-started) - Install and run your first hot reload
 - [Hot Reload Guide](/MMDR/guides/hot-reload) - Master instant code reloading
-- [Console Guide](/MMDR/guides/console-guide) - Learn the interactive debug console
+- [Console Guide](https://arlit1-f.girhub.io/MMDR/guides/console/) - Learn the interactive debug console
 - [Inspector Guide](/MMDR/guides/inspector-guide) - Use the visual inspector overlay
 - [API Reference](/MMDR/guides/api-reference) - Complete API documentation
 
