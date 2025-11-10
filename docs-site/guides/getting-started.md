@@ -467,7 +467,7 @@ Problem: Error message when reloading a class
 
 Now that you're set up, explore more features:
 
-- (To be added)📖 [Hot Reload Guide](docs/HOT_RELOAD_GUIDE.md) - Advanced hot reload techniques
+- (To be added)📖 [Hot Reload Guide](https://arlit1-f.github.io/MMDR/guides/console/) - Advanced hot reload techniques
 - (To be added)💻 [Console Guide](docs/CONSOLE_GUIDE.md) - Master the debug console
 - (To be added)🔍 [Inspector Guide](docs/INSPECTOR_GUIDE.md) - Deep dive into inspection
 - (To be added)📚 [API Reference](docs/API_REFERENCE.md) - Complete API documentation
