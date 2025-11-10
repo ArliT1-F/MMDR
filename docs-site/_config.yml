@@ -19,13 +19,13 @@ nav:
     url: /guides/getting-started
   - title: Guides
     url: /guides/
-    subnav:
-      - title: Hot Reload
-        url: /guides/hot-reload
-      - title: Console
-        url: /guides/console
-      - title: Inspector
-        url: /guides/inspector
+    #subnav:
+  - title: Hot Reload
+    url: /guides/hot-reload
+  - title: Console
+    url: /guides/console
+  - title: Inspector
+    url: /guides/inspector
   - title: API Reference
     url: /guides/api-reference
   - title: GitHub
