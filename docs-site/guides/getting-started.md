@@ -151,7 +151,7 @@ Let's modify some code and see it update instantly!
 ### Step 1: Create a Test Class
 
 In your mod, create a simple class:
-```Java
+```java
 
 package com.example.mymod;
 
@@ -165,7 +165,7 @@ public class HotReloadTest {
 1. Launch Minecraft
 2. Open the debug console (``` ` ```)
 3. Execute:
-```groovy
+```java
 
 import com.example.mymod.HotReloadTest
 println(HotReloadTest.getMessage())
@@ -184,7 +184,7 @@ public static String getMessage() {
 ### Step 4: See the Changes
 
 In the console, run the same code again:
-```groovy
+```java
 println(HotReloadTest.getMessage())
 ```
 You should now see: `HOT RELOADED! 🔥`
@@ -198,7 +198,7 @@ No restart needed! ✨
 The console is a powerful REPL (Read-Eval-Print-Loop) environment.
 
 ### Basic Commands
-```groovy
+```java
 
 // Get the Minecraft client instance
 mc
@@ -230,7 +230,7 @@ mc.world.setWeather(0, 0, true, false)  // Clear
 ### Special Commands
 
 Commands starting with `/` are MMDR-specific:
-```groovy
+```java
 
 /help       // Show all commands
 /clear      // Clear console output
@@ -254,7 +254,7 @@ The console provides these pre-defined variables:
 ### Multi-line Input
 
 For complex code, use multi-line mode:
-```groovy
+```java
 // Define a function
 def teleportRandomly() {
     def x = (Math.random() - 0.5) * 1000
@@ -344,7 +344,7 @@ Do some actions in the game:
 ### Step 4: Generate Test Code
 
 Open the console and run:
-```groovy
+```java
 MMDR.getTestHarness().generateTestCodeFromCurrent("MyFirstTest")
 ```
 ### Step 5: View the Generated Test
@@ -399,7 +399,7 @@ Problem: Code changes don't appear in-game
 - Look for `.class` files in your output directory
 
 2. **Check watch paths:**
-```groovy
+```java
 
 // In console:
 MMDR.getHotReloadManager().isRunning()
@@ -458,7 +458,7 @@ Problem: Error message when reloading a class
 4. **Class dependencies:** Dependent classes may need reload too
 
 **Workaround:**
-```groovy
+```java
 // Force reload dependencies
 /reload com.example.DependentClass
 ```
@@ -467,10 +467,10 @@ Problem: Error message when reloading a class
 
 Now that you're set up, explore more features:
 
-- 📖 [Hot Reload Guide](docs/HOT_RELOAD_GUIDE.md) - Advanced hot reload techniques
-- 💻 [Console Guide](docs/CONSOLE_GUIDE.md) - Master the debug console
-- 🔍 [Inspector Guide](docs/INSPECTOR_GUIDE.md) - Deep dive into inspection
-- 📚 [API Reference](docs/API_REFERENCE.md) - Complete API documentation
+- (To be added)📖 [Hot Reload Guide](docs/HOT_RELOAD_GUIDE.md) - Advanced hot reload techniques
+- (To be added)💻 [Console Guide](docs/CONSOLE_GUIDE.md) - Master the debug console
+- (To be added)🔍 [Inspector Guide](docs/INSPECTOR_GUIDE.md) - Deep dive into inspection
+- (To be added)📚 [API Reference](docs/API_REFERENCE.md) - Complete API documentation
 
 ## Getting Help
 
