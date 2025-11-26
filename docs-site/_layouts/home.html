@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body class="home">
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                </div>
+                <div class="navbar-menu">
+                    <a href="{{ '/' | relative_url }}" class="navbar-item">Home</a>
+                    <a href="{{ '/guides/getting-started' | relative_url }}" class="navbar-item">Getting Started</a>
+                    <a href="https://github.com/ArliT1-F/MMDR" class="navbar-item" target="_blank">GitHub</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        {{ content }}
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 MMDR Team. Licensed under MIT.</p>
+        </div>
+    </footer>
+</body>
+</html>
