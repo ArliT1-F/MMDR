@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "mmdr",
+  "version": "${version}",
+  "name": "Minecraft Mod Development Runtime",
+  "description": "A revolutionary development environment for Minecraft mod developers featuring hot reload, interactive debugging, and visual inspection tools.",
+  "authors": [
+    "MMDR Team"
+  ],
+  "contact": {
+    "homepage": "https://github.com/yourusername/MMDR",
+    "sources": "https://github.com/yourusername/MMDR",
+    "issues": "https://github.com/yourusername/MMDR/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/mmdr/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.mmdr.MMDR"
+    ],
+    "client": [
+      "com.mmdr.MMDR"
+    ]
+  },
+  "mixins": [
+    "mmdr.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [ "library" ],
+      "parent": {
+        "id": "fabric-api",
+        "name": "Fabric API",
+        "badges": [ "library" ]
+      }
+    }
+  }
+}
