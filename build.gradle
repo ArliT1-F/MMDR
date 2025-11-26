@@ -1,14 +1,20 @@
 plugins {
     id 'fabric-loom' version '1.5-SNAPSHOT'
     id 'maven-publish'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 version = project.mod_version
 group = project.maven_group
 
-base {
-    archivesName = project.archives_base_name
+configurations {
+    shade {
+        canBeResolved = true
+        canBeConsumed = false    
+    }
+    implementation.extendsFrom shade
 }
+
 
 repositories {
     mavenCentral()
@@ -26,21 +32,44 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     // Hot Reload Dependencies
-    implementation 'org.ow2.asm:asm:9.5'
-    implementation 'org.ow2.asm:asm-tree:9.5'
-    implementation 'org.ow2.asm:asm-commons:9.5'
-    implementation 'org.ow2.asm:asm-util:9.5'
+    shade 'org.ow2.asm:asm:9.5'
+    shade 'org.ow2.asm:asm-tree:9.5'
+    shade 'org.ow2.asm:asm-commons:9.5'
+    shade 'org.ow2.asm:asm-util:9.5'
 
     // Scripting Engine for REPL
-    implementation 'org.codehaus.groovy:groovy:3.0.19'
-    implementation 'org.codehaus.groovy:groovy-jsr223:3.0.19'
+    shade 'org.codehaus.groovy:groovy:3.0.19'
+    shade 'org.codehaus.groovy:groovy-jsr223:3.0.19'
 
     // NBT & Serialization
-    implementation 'com.google.code.gson:gson:2.10.1'
+    shade 'com.google.code.gson:gson:2.10.1'
 
     // Testing
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
     testImplementation 'org.mockito:mockito-core:5.3.1'
+}
+
+shadowJar {
+
+    // Include implementation dependencies inside the jar
+    configurations = [project.configurations.shade]
+
+    // Relocate Groovy so it does NOT conflict with other mods
+    relocate 'groovy', 'com.mmdr.shaded.groovy'
+
+    // Relocate ASM too
+    relocate 'org.objectweb.asm', 'com.mmdr.shaded.asm'
+
+    // Relocate gson only to avoid conflicts
+    // relocate 'com.google.gson', 'com.mmdr.shaded.gson'
+
+}
+
+remapJar {
+
+    dependsOn shadowJar
+    inputFile = shadowJar.archiveFile.get()
+
 }
 
 processResources {
@@ -69,6 +98,10 @@ jar {
     }
 }
 
+test {
+    useJUnitPlatform()
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -77,6 +110,6 @@ publishing {
     }
     
     repositories {
-        // Add your publishing repository here
+        'https://github.com/ArliT1-F/MMDR'
     }
 }
